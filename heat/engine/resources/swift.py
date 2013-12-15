@@ -86,10 +86,9 @@ class SwiftContainer(resource.Resource):
         container = self.physical_resource_name()
         headers = SwiftContainer._build_meta_headers(
             self.properties['X-Container-Meta'])
-        if 'X-Container-Read' in self.properties.keys():
-            headers['X-Container-Read'] = self.properties['X-Container-Read']
-        if 'X-Container-Write' in self.properties.keys():
-            headers['X-Container-Write'] = self.properties['X-Container-Write']
+        for key in ('X-Container-Read', 'X-Container-Write'):
+            if self.properties.get(key) is not None:
+                headers[key] = self.properties[key]
         logger.debug('SwiftContainer create container %s with headers %s' %
                      (container, headers))
 
