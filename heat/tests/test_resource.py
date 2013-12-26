@@ -14,8 +14,6 @@
 
 import itertools
 
-import testscenarios
-
 from heat.common import exception
 from heat.engine import dependencies
 from heat.engine import parser
@@ -29,9 +27,6 @@ import heat.db.api as db_api
 from heat.tests import generic_resource as generic_rsrc
 from heat.tests.common import HeatTestCase
 from heat.tests import utils
-
-
-load_tests = testscenarios.load_tests_apply_scenarios
 
 
 class ResourceTest(HeatTestCase):

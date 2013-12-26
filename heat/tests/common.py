@@ -18,6 +18,7 @@ import logging
 import mox
 import os
 import sys
+import testscenarios
 import testtools
 
 from oslo.config import cfg
@@ -27,7 +28,7 @@ from heat.engine import environment
 from heat.engine import resources
 
 
-class HeatTestCase(testtools.TestCase):
+class HeatTestCase(testscenarios.WithScenarios, testtools.TestCase):
 
     def setUp(self):
         super(HeatTestCase, self).setUp()
