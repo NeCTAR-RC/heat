@@ -108,8 +108,7 @@ class SwiftContainer(resource.Resource):
         return unicode(self.resource_id)
 
     def FnGetAtt(self, key):
-        url, token_id = self.swift().get_auth()
-        parsed = list(urlparse(url))
+        parsed = list(urlparse(self.swift().url))
         if key == 'DomainName':
             return parsed[1].split(':')[0]
         elif key == 'WebsiteURL':
