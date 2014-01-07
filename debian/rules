@@ -1,0 +1,29 @@
+#!/usr/bin/make -f
+
+#export DH_VERBOSE=1
+
+%:
+	dh $@  --with python2 
+
+ifeq (,$(findstring nocheck, $(DEB_BUILD_OPTIONS)))
+override_dh_auto_test:
+	./run_tests.sh -u --concurrency=1
+endif
+
+override_dh_clean:
+	dh_clean
+	rm -rf heat.egg-info
+	rm -rf doc/build
+	find . -iname '*.pyc' -delete
+	rm -f run_tests.err.log
+	rm -rf pbr*.egg
+	rm -f etc/heat/heat.conf
+
+override_dh_install:
+	cp etc/heat/heat.conf.sample etc/heat/heat.conf
+	dh_install
+
+override_dh_installman:
+	python setup.py build
+	make -C doc man
+	dh_installman

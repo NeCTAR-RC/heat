@@ -1,0 +1,160 @@
+heat (2013.2-0ubuntu1~cloud0) precise-havana; urgency=low
+
+  * New upstream release for the Ubuntu Cloud Archive.
+
+ -- James Page <james.page@ubuntu.com>  Mon, 21 Oct 2013 21:25:41 -0700
+
+heat (2013.2-0ubuntu1) saucy; urgency=low
+
+  * New upstream release (LP: #1236462).
+
+ -- Chuck Short <zulcss@ubuntu.com>  Thu, 17 Oct 2013 09:30:24 -0400
+
+heat (2013.2~rc2-0ubuntu1) saucy; urgency=low
+
+  * New upstream release candidate (LP: #1239156).
+
+ -- James Page <james.page@ubuntu.com>  Sat, 12 Oct 2013 16:53:03 +0100
+
+heat (2013.2~rc1-0ubuntu1) saucy; urgency=low
+
+  * New upstream release.
+  * debian/control: Dropped python-d2to1 build dependency.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Thu, 03 Oct 2013 09:43:04 -0400
+
+heat (2013.2~b3-0ubuntu1) saucy; urgency=low
+
+  [ Chuck Short ]
+  * New upstream release.
+  * debian/control: Add python-netaddr as build-dep.
+  * debian/heat-common.install: Remove heat-boto and associated man-page
+  * debian/heat-common.install: Remove heat-cfn and associated man-page
+  * debian/heat-common.install: Remove heat-watch and associated man-page
+  * debian/patches/fix-sqlalchemy-0.8.patch: Dropped
+
+  [ Adam Gandelman ]
+  * debian/patches/default-kombu.patch: Dropped.
+  * debian/patches/default-sqlite.patch: Refreshed.
+  * debian/*.install, rules: Install heat.conf.sample as common
+    config file in heat-common. Drop other per-package configs, they
+    are no longer used.
+  * debian/rules: Clean pbr .egg from build dir if it exists.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Mon, 09 Sep 2013 13:10:26 -0400
+
+heat (2013.2~b2.a186.g2b4b248-0ubuntu2) saucy; urgency=low
+
+  * d/rules: Limit test execution concurrency to 1 to avoid test failures
+    in buildds. 
+
+ -- James Page <james.page@ubuntu.com>  Thu, 08 Aug 2013 15:42:32 +0100
+
+heat (2013.2~b2.a186.g2b4b248-0ubuntu1) saucy; urgency=low
+
+  [ Chuck Short ]
+  * debian/patches/rename-quantumclient.patch: Dropped no longer needed. 
+  * debian/control: Add python-oslo.sphinx
+
+  [ James Page ]
+  * New upstream snapshot.
+  * d/watch: Updated to track releases on launchpad.
+  * d/control: Drop BD in pep8, no longer required.
+  * d/control,rules: Drop use of openstack-pkg-tools, revert use of xz
+    compression for debs.
+  * d/control,*.config,*.templates,po: Drop use of debconf/dbconfig-common
+    to configure heat.
+  * d/*.upstart: Add upstart configurations for Ubuntu.
+  * d/p/default-kombu.patch: Switch default messaging from qpid to
+    kombu.
+  * d/p/default-sqlite.patch: Use sqlite as default database option.
+  * d/control: Add python-ceilometerclient to BD's.
+  * d/rules: Fail package build for unit test failures.
+  * d/*.install: Directly install configuration files to /etc/heat.
+  * d/control: Update VCS locations to ubuntu-server-dev branches.
+  * d/heat-common.{install,manpages}: Include new binaries and associated
+    manpages.
+
+ -- James Page <james.page@ubuntu.com>  Thu, 08 Aug 2013 15:23:59 +0100
+
+heat (2013.2~b2-0ubuntu4) saucy; urgency=low
+
+  [ Chuck Short ]
+  * debian/rules: Enable testsuite during builds.
+  * debian/patches/fix-sqlalchemy-0.8.patch: Build against sqlalchemy 0.8.
+  * debian/patches/rename-quantumclient.patch: quantumclient -> neutronclient.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Thu, 08 Aug 2013 01:08:42 +0000
+
+heat (2013.2~b2-0ubuntu3) saucy; urgency=low
+
+  * Resynchronize with debian, remaining changes:
+    - Add sqlite3 to heat-common depends to fix
+      an autopkgtest failure.
+    - Add autopkg tests. 
+    - Pass the testsuite if it fails.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Wed, 07 Aug 2013 10:36:33 -0400
+
+heat (2013.2~b2-0ubuntu2) saucy; urgency=low
+
+  * debian/control: Add sqlite3 to heat-common depends to fix
+    an autopkgtest failure. 
+
+ -- Chuck Short <zulcss@ubuntu.com>  Tue, 06 Aug 2013 15:36:33 +0000
+
+heat (2013.2~b2-0ubuntu1) saucy; urgency=low
+
+  [ Yolanda Robla ]
+  * debian/tests: added autopkg tests
+
+  [ Chuck Short ]
+  * New upstream release
+  * debian/control:
+    - Add python-pbr to build-depends.
+    - Add python-d2to to build-depends.
+    - Dropped python-argparse.
+    - Add python-six to build-depends.
+    - Dropped python-sendfile.
+    - Dropped python-nose.
+    - Added testrepository.
+    - Added python-testtools.
+  * debian/rules: Run testrepository instead of nosetets.
+  * debian/patches/removes-lxml-version-limitation-from-pip-requires.patch: Dropped
+    no longer needed.
+  * debian/patches/fix-package-version-detection-when-building-doc.patch: Dropped
+    no longer needed.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Mon, 22 Jul 2013 16:22:29 -0400
+
+heat (2013.1-4) unstable; urgency=low
+
+  * Fixed the dbsync to the new thing upstream is using (it was crashing the
+    postinst).
+  * Fixed the prerm script of heat-engine that was calling dbc_go heat instead
+    of dbc_go heat-engine.
+  * Added missing dependency: python-mysqldb.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 22 May 2013 23:57:49 +0800
+
+heat (2013.1-3) unstable; urgency=low
+
+  * Added missing dbconfig-common depends (Closes: #709126). Thanks to Andrea
+    Beckmann for the bug report.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 21 May 2013 12:38:11 +0800
+
+heat (2013.1-2) unstable; urgency=low
+
+  * Uploading to unstable.
+  * Removes the <=2.3.5 from python-lxml requirements.
+  * Fix package version detection when building docs.
+  * Cleans doc/build on the clean target.
+
+ -- Thomas Goirand <zigo@debian.org>  Thu, 16 May 2013 13:15:54 +0000
+
+heat (2013.1-1) experimental; urgency=low
+
+  * Initial release (Closes: #695302).
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 04 Feb 2013 21:56:59 +0800

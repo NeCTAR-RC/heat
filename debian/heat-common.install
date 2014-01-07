@@ -1,0 +1,5 @@
+/usr/bin/heat-manage
+/usr/bin/heat-keystone-setup
+etc/heat/policy.json
+etc/heat/api-paste.ini
+etc/heat/heat.conf etc/heat

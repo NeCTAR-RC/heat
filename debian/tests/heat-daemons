@@ -1,0 +1,15 @@
+#!/bin/bash
+#---------------------
+# Testing nova-daemons
+#---------------------
+set -e
+DAEMONS=('heat-engine' 'heat-api' 'heat-api-cfn' 'heat-api-cloudwatch')
+
+for daemon in "${DAEMONS[@]}"; do
+    if pidof -x $daemon > /dev/null; then
+        echo "OK"
+    else
+        echo "ERROR: ${daemon} IS NOT RUNNING"
+        exit 1
+    fi
+done

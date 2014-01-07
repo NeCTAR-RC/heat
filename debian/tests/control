@@ -1,0 +1,3 @@
+Tests: python-heat heat-daemons
+Depends: python-heat, heat-engine, heat-api, heat-api-cfn, heat-api-cloudwatch
+Restrictions: needs-root

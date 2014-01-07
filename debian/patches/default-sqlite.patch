@@ -1,0 +1,16 @@
+Description: Default to using sqlite
+Author: James Page <james.page@ubuntu.com>
+Forwarded: not-needed
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+Index: heat/etc/heat/heat.conf.sample
+--- heat.orig/etc/heat/heat.conf.sample	2013-09-06 16:37:54.000000000 -0700
++++ heat/etc/heat/heat.conf.sample	2013-09-06 16:39:31.363547917 -0700
+@@ -7,6 +7,7 @@
+ # The SQLAlchemy connection string used to connect to the
+ # database (string value)
+ #sql_connection=mysql://heat:heat@localhost/heat
++sql_connection = sqlite:////var/lib/heat/heat.sqlite
+ 
+ # timeout before idle sql connections are reaped (integer
+ # value)
