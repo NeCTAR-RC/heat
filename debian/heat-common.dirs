@@ -1,0 +1,3 @@
+var/log/heat
+var/lib/heat
+etc/heat

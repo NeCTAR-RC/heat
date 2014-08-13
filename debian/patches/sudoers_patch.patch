@@ -1,0 +1,17 @@
+Description: Change sudoers directory to be sudoers.d
+Author: Chuck Short <zulcss@ubuntu.com>
+Forwarded: Not needed.
+diff -Naurp heat-2014.1.rc2.orig/heat/engine/resources/nova_utils.py heat-2014.1.rc2/heat/engine/resources/nova_utils.py
+--- heat-2014.1.rc2.orig/heat/engine/resources/nova_utils.py	2014-04-10 03:27:34.000000000 -0400
++++ heat-2014.1.rc2/heat/engine/resources/nova_utils.py	2014-04-11 15:33:08.870985000 -0400
+@@ -198,8 +198,8 @@ def build_userdata(resource, userdata=No
+         #
+         # See bug https://bugs.launchpad.net/heat/+bug/1257410
+         boothook_custom_user = r"""useradd -m %s
+-echo -e '%s\tALL=(ALL)\tNOPASSWD: ALL' >> /etc/sudoers
+-""" % (instance_user, instance_user)
++echo -e '%s\tALL=(ALL)\tNOPASSWD: ALL' >> /etc/sudoers.d/heat-instance-%s
++""" % (instance_user, instance_user, instance_user)
+     else:
+         config_custom_user = ''
+         boothook_custom_user = ''

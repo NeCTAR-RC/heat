@@ -1,0 +1,15 @@
+Description: Default to using sqlite
+Author: James Page <james.page@ubuntu.com>
+Forwarded: not-needed
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/etc/heat/heat.conf.sample
++++ b/etc/heat/heat.conf.sample
+@@ -550,6 +550,7 @@
+ # Deprecated group/name - [DATABASE]/sql_connection
+ # Deprecated group/name - [sql]/connection
+ #connection=sqlite:////heat/openstack/common/db/$sqlite_db
++connection=sqlite:////var/lib/heat/$sqlite_db
+ 
+ # The SQLAlchemy connection string used to connect to the
+ # slave database (string value)

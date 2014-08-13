@@ -1,0 +1,178 @@
+Source: heat
+Section: web
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: PKG OpenStack <openstack-devel@lists.alioth.debian.org>
+Uploaders:
+ Loic Dachary (OuoU) <loic@debian.org>,
+ Julien Danjou <acid@debian.org>,
+ Thomas Goirand <zigo@debian.org>,
+ Ghe Rivero <ghe.rivero@stackops.com>,
+ Mehdi Abaakouk <sileht@sileht.net>
+Build-Depends:
+ debhelper (>= 9),
+ python-all (>= 2.6.6-3~),
+ python-pbr (>= 0.5.21),
+Build-Depends-Indep:
+ python-babel,
+ python-boto (>= 2.4),
+ python-ceilometerclient,
+ python-cinderclient,
+ python-coverage,
+ python-crypto,
+ python-eventlet (>= 0.12.0),
+ python-extras,
+ python-glanceclient,
+ python-greenlet (>= 0.3.2),
+ python-heatclient,
+ python-httplib2,
+ python-iso8601,
+ python-keystoneclient (>= 1:0.2.3),
+ python-kombu,
+ python-lockfile (>= 0.8),
+ python-lxml (>= 2.3),
+ python-memcache,
+ python-migrate,
+ python-mox,
+ python-netaddr,
+ python-neutronclient (>= 1:2.2.0),
+ python-novaclient,
+ python-oslo.config,
+ python-oslosphinx,
+ python-paramiko,
+ python-paste,
+ python-pastedeploy,
+ python-routes,
+ python-setuptools,
+ python-six,
+ python-sphinx,
+ python-sqlalchemy (>= 0.7.8),
+ python-swiftclient,
+ python-testrepository (>= 0.0.13),
+ python-testscenarios,
+ python-testtools (>= 0.9.29),
+ python-troveclient,
+ python-webob (>= 1.2.3),
+ python-yaml,
+ testrepository (>= 0.0.13)
+Standards-Version: 3.9.4
+Vcs-Browser: http://bazaar.launchpad.net/~ubuntu-server-dev/heat/icehouse/files
+Vcs-Bzr: https://code.launchpad.net/~ubuntu-server-dev/heat/icehouse
+Homepage: http://wiki.openstack.org/Heat
+XS-Testsuite: autopkgtest
+
+Package: python-heat
+Section: python
+Architecture: all
+Depends:
+ python-argparse,
+ python-boto (>= 2.4),
+ python-cinderclient,
+ python-crypto,
+ python-eventlet (>= 0.12.0),
+ python-extras,
+ python-glanceclient,
+ python-greenlet (>= 0.3.2),
+ python-httplib2,
+ python-iso8601,
+ python-keystoneclient (>= 1:0.2.3),
+ python-kombu,
+ python-lxml (>= 2.3),
+ python-memcache,
+ python-migrate,
+ python-mysqldb,
+ python-neutronclient (>= 1:2.2.0),
+ python-novaclient,
+ python-oslo.config,
+ python-paste,
+ python-pastedeploy,
+ python-routes,
+ python-setuptools,
+ python-six,
+ python-sqlalchemy (>= 0.7.8),
+ python-swiftclient,
+ python-webob (>= 1.2.3),
+ python-yaml,
+ ${misc:Depends},
+ ${python:Depends}
+Description: OpenStack orchestration service - Python files
+ Heat is a service to orchestrate multiple composite cloud applications using
+ templates, through both an OpenStack-native ReST API and a
+ CloudFormation-compatible Query API.
+ .
+ This package contains the Python libraries.
+
+Package: heat-common
+Architecture: all
+Depends:
+ adduser,
+ python-heat (=${binary:Version}),
+ ${misc:Depends},
+ ${python:Depends}
+Description: OpenStack orchestration service - common files
+ Heat is a service to orchestrate multiple composite cloud applications using
+ templates, through both an OpenStack-native ReST API and a
+ CloudFormation-compatible Query API.
+ .
+ This package contains the common files.
+
+Package: heat-engine
+Architecture: all
+Depends:
+ adduser,
+ heat-common (=${binary:Version}),
+ ${misc:Depends},
+ ${ostack-lsb-base},
+ ${python:Depends}
+Description: OpenStack orchestration service - engine
+ Heat is a service to orchestrate multiple composite cloud applications using
+ templates, through both an OpenStack-native ReST API and a
+ CloudFormation-compatible Query API.
+ .
+ This package contains the heat engine, which is the core service of heat, and
+ which the API servers will use.
+
+Package: heat-api
+Architecture: all
+Depends:
+ adduser,
+ heat-common (=${binary:Version}),
+ ${misc:Depends},
+ ${ostack-lsb-base},
+ ${python:Depends}
+Description: OpenStack orchestration service - ReST API
+ Heat is a service to orchestrate multiple composite cloud applications using
+ templates, through both an OpenStack-native ReST API and a
+ CloudFormation-compatible Query API.
+ .
+ This package contains the ReST API.
+
+Package: heat-api-cfn
+Architecture: all
+Depends:
+ adduser,
+ heat-common (=${binary:Version}),
+ ${misc:Depends},
+ ${ostack-lsb-base},
+ ${python:Depends}
+Description: OpenStack orchestration service - CFN API
+ Heat is a service to orchestrate multiple composite cloud applications using
+ templates, through both an OpenStack-native ReST API and a
+ CloudFormation-compatible Query API.
+ .
+ This package contains the CloudFormation (CFN) API.
+
+Package: heat-api-cloudwatch
+Architecture: all
+Depends:
+ adduser,
+ heat-common (=${binary:Version}),
+ ${misc:Depends},
+ ${ostack-lsb-base},
+ ${python:Depends}
+Description: OpenStack orchestration service - CloudWatch API
+ Heat is a service to orchestrate multiple composite cloud applications using
+ templates, through both an OpenStack-native ReST API and a
+ CloudFormation-compatible Query API.
+ .
+ This package contains the CloudWatch API.
