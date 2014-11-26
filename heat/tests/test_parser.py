@@ -925,8 +925,7 @@ class StackTest(HeatTestCase):
                               created_time=IgnoreArg(),
                               updated_time=None,
                               user_creds_id=stack.user_creds_id,
-                              tenant_id='test_tenant_id',
-                              validate_parameters=False)
+                              tenant_id='test_tenant_id')
 
         self.m.ReplayAll()
         parser.Stack.load(self.ctx, stack_id=self.stack.id,
@@ -2778,6 +2777,7 @@ class StackTest(HeatTestCase):
                                   template.Template(tmpl),
                                   environment.Environment({'flavor': 'dummy'}))
 
+        self.stack.validate()
         self.stack.store()
         self.stack.create()
         stack_id = self.stack.id
