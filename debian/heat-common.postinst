@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -e
+
+if [ "$1" = "configure" ] ; then
+    if ! getenv group heat > /dev/null 2>&1; then
+        addgroup --system heat >/dev/null
+    fi
+    if ! getenv passwd heat > /dev/null 2>&1; then
+        adduser --system --home /var/lib/heat --ingroup heat --no-create-home \
+            --shell /bin/false heat
+    fi
+	chown -R heat:adm /var/log/heat
+	mkdir -p /etc/heat
+	chmod 0750 /var/log/heat /etc/heat
+	mkdir -p /var/lib/heat
+	chown heat:heat -R /var/lib/heat /etc/heat
+fi
+
+#DEBHELPER#
+
+exit 0

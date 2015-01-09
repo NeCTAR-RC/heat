@@ -1,0 +1,17 @@
+Description: Default to using sqlite
+Author: James Page <james.page@ubuntu.com>
+Forwarded: not-needed
+diff --git a/etc/heat/heat.conf.sample b/etc/heat/heat.conf.sample
+index 06ca086..3b980ab 100644
+--- a/etc/heat/heat.conf.sample
++++ b/etc/heat/heat.conf.sample
+@@ -858,7 +858,7 @@
+ # Deprecated group/name - [DEFAULT]/sql_connection
+ # Deprecated group/name - [DATABASE]/sql_connection
+ # Deprecated group/name - [sql]/connection
+-#connection=<None>
++connection=sqlite:////var/lib/heat/$sqlite_db
+ 
+ # The SQL mode to be used for MySQL sessions. This option,
+ # including the default, overrides any server-set SQL mode. To
+

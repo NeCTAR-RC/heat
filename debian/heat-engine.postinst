@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+
+#if [ "$1" = "configure" ] ; then
+#	su -s /bin/sh -c  "heat-manage db_sync" heat
+#fi
+
+#DEBHELPER#
+
+exit 0
