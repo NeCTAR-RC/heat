@@ -1,10 +1,8 @@
 Description: Change sudoers directory to be sudoers.d
 Author: Chuck Short <zulcss@ubuntu.com>
 Forwarded: Not needed.
-Index: heat/heat/engine/resources/nova_utils.py
-===================================================================
---- heat.orig/heat/engine/resources/nova_utils.py	2014-11-27 15:39:01.287425874 +1100
-+++ heat/heat/engine/resources/nova_utils.py	2014-11-27 15:39:01.283425805 +1100
+--- a/heat/engine/resources/nova_utils.py
++++ b/heat/engine/resources/nova_utils.py
 @@ -199,8 +199,8 @@
          #
          # See bug https://bugs.launchpad.net/heat/+bug/1257410
