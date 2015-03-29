@@ -25,6 +25,14 @@ from heat.common.i18n import _LI
 
 cfg.CONF.import_opt('max_template_size', 'heat.common.config')
 
+proxy_opts = [
+    cfg.StrOpt('http_proxy',
+               default=None,
+               help="HTTP Proxy to use for url requests")
+]
+
+cfg.CONF.register_opts(proxy_opts)
+
 LOG = logging.getLogger(__name__)
 
 
@@ -41,6 +49,11 @@ def get(url, allowed_schemes=('http', 'https')):
     Raise an IOError if getting the data fails.
     """
     LOG.info(_LI('Fetching data from %s'), url)
+
+    if cfg.CONF.http_proxy:
+        import os
+        os.environ["http_proxy"] = cfg.CONF.http_proxy
+        os.environ["https_proxy"] = cfg.CONF.http_proxy
 
     components = urllib.parse.urlparse(url)
 
