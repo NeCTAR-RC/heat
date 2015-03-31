@@ -12,6 +12,7 @@
 #    under the License.
 
 import six
+import time
 
 from heat.common import exception
 from heat.engine import properties
@@ -180,6 +181,7 @@ class SecurityGroup(resource.Resource):
             sec = self.nova().security_groups.create(
                 self.physical_resource_name(),
                 self.properties[self.GROUP_DESCRIPTION])
+            time.sleep(5)
 
         self.resource_id_set(sec.id)
         if self.properties[self.SECURITY_GROUP_INGRESS]:
@@ -204,6 +206,7 @@ class SecurityGroup(resource.Resource):
                         i.get(self.RULE_TO_PORT),
                         i.get(self.RULE_CIDR_IP),
                         source_group_id)
+                    time.sleep(2)
                 except Exception as ex:
                     if self.client_plugin('nova').is_bad_request(ex) and \
                             six.text_type(ex).find('already exists') >= 0:
