@@ -1,5 +1,4 @@
 #default-sqlite.patch
-#fix-requirements.patch
+fix-requirements.patch
 sudoers_patch.patch
 default-log-dir.patch
-#nectar-oslo-messaging.patch
