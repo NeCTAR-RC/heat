@@ -1,6 +1,6 @@
 --- a/etc/heat/heat.conf.sample
 +++ b/etc/heat/heat.conf.sample
-@@ -508,7 +508,7 @@
+@@ -507,7 +507,7 @@
  # (Optional) The base directory used for relative --log-file
  # paths. (string value)
  # Deprecated group/name - [DEFAULT]/logdir
