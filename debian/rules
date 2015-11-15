@@ -1,0 +1,41 @@
+#!/usr/bin/make -f
+
+#export DH_VERBOSE=1
+export OSLO_PACKAGE_VERSION=$(shell dpkg-parsechangelog | sed -n -e 's/^Version: //p')
+
+include /usr/share/openstack-pkg-tools/pkgos.make
+
+%:
+	dh $@ --buildsystem=python_distutils  --with python2,systemd
+
+ifeq (,$(findstring nocheck, $(DEB_BUILD_OPTIONS)))
+override_dh_auto_test:
+	rm -rf .testrepository
+	testr init && \
+	set -e && \
+	TEMP_REZ=`mktemp -t` && \
+	testr run --subunit '^(?!heat_integrationtests)' | tee $$TEMP_REZ | subunit2pyunit; \
+	rm -f $$TEMP_REZ
+endif
+
+override_dh_clean:
+	dh_clean
+	rm -rf doc/build
+	find . -iname '*.pyc' -delete
+	rm -f run_tests.err.log
+	rm -rf pbr*.egg
+	rm -f etc/heat/heat.conf
+	rm -f debian/*.init debian/*.service debian/*.upstart
+
+override_dh_auto_clean:
+	dh_auto_clean
+
+override_dh_install:
+	oslo-config-generator --config-file=config-generator.conf
+	cp etc/heat/heat.conf.sample etc/heat/heat.conf
+	dh_install
+
+#override_dh_installman:
+#	python setup.py build
+#	make -C doc man
+#	dh_installman

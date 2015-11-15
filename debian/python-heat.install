@@ -1,0 +1,2 @@
+heat/db/sqlalchemy/migrate_repo/migrate.cfg usr/lib/python2.7/dist-packages/heat/db/sqlalchemy/migrate_repo
+usr/lib/python*/dist-packages/*

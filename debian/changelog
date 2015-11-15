@@ -1,0 +1,559 @@
+heat (1:5.0.0-0ubuntu1~cloud0) trusty-liberty; urgency=medium
+
+  * New upstream release for the Ubuntu Cloud Archive.
+
+ -- Openstack Ubuntu Testing Bot <openstack-testing-bot@ubuntu.com>  Fri, 16 Oct 2015 10:44:53 +0000
+
+heat (1:5.0.0-0ubuntu1) wily; urgency=medium
+
+  * New upstream release for OpenStack Liberty.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Thu, 15 Oct 2015 12:47:16 -0400
+
+heat (1:5.0.0~rc2-0ubuntu1) wily; urgency=medium
+
+  * New upstream release candidate for OpenStack Liberty.
+  * Don't clean heat.egg-info ensuring that non-py resources actually
+    get installed (LP: #1505444).
+
+ -- James Page <james.page@ubuntu.com>  Mon, 12 Oct 2015 21:44:47 -0700
+
+heat (1:5.0.0~rc1-0ubuntu1) wily; urgency=medium
+
+  * New upstream release candidate for OpenStack Liberty.
+  * d/control: Align (build-)depends with upstream.
+  * d/watch: Update to cope with upstream rc versioning.
+  * d/rules: Drop removal of .eggs directory in override_dh_auto_clean.
+  * d/control: Bump minimum pbr version to 1.8.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Wed, 23 Sep 2015 14:22:51 -0400
+
+heat (1:5.0.0~b3-0ubuntu1) wily; urgency=medium
+
+  * New upstream milestone for OpenStack Liberty.
+  * d/control: Align (build-)depends with upstream.
+  * d/p/fix-dummy-resource-missing.patch: Dropped. Fixed in milestone.
+  * d/p/move-extensions.patch: Dropped. Fixed in milestone.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Tue, 08 Sep 2015 15:52:07 -0400
+
+heat (1:5.0.0~b2-0ubuntu2) wily; urgency=medium
+
+  * d/control: Add python-pymysql to (build-)depends.
+  * d/p/fix-dummy-resource-missing.patch: Cherry-picked from master to fix
+    failing tests.
+  * d/p/move-extensions: Cherry-picked from master to fix failing tests.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Thu, 27 Aug 2015 14:45:23 -0400
+
+heat (1:5.0.0~b2-0ubuntu1) wily; urgency=medium
+
+  * New upstream milestone for OpenStack Liberty.
+  * d/control: Align (build-)depends with upstream.
+  * d/p/fix-requirements.patch: Dropped. No longer needed.
+  * d/p/fixup-assert-regex.patch: Rebased.
+  * d/rules: Remove .eggs directory in override_dh_auto_clean.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Wed, 19 Aug 2015 08:11:50 -0400
+
+heat (1:5.0.0~b1-0ubuntu4) wily; urgency=medium
+
+  * d/heat-common.install: Include missing templates directory (LP: #1431013).
+  * d/python-heat.install: Include missing migrate.cfg.
+
+ -- James Page <james.page@ubuntu.com>  Thu, 13 Aug 2015 11:31:48 +0100
+
+heat (1:5.0.0~b1-0ubuntu2) wily; urgency=medium
+
+  * No change rebuild with SQLAlchemy 1.0.6.
+
+ -- James Page <james.page@ubuntu.com>  Fri, 24 Jul 2015 09:26:42 +0100
+
+heat (1:5.0.0~b1-0ubuntu1) wily; urgency=medium
+
+  [ Corey Bryant ]
+  * New upstream milestone for OpenStack Liberty:
+    - d/control: Align (build-)depends with upstream.
+    - d/p/fix-requirements.patch: Rebased.
+    - d/p/sudoers_patch.patch: Rebased.
+
+  [ James Page ]
+  * d/s/options: Ignore any removal of egg-info data during package clean.
+  * d/control: Drop MySQL and PostgreSQL related BD's, not required for unit
+    testing.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Tue, 07 Jul 2015 17:06:19 +0100
+
+heat (2015.1.0-0ubuntu1.1) vivid; urgency=medium
+
+  * debian/heat-common.install: install missing scripts (LP: #1453160):
+    - /usr/bin/heat-db-setup
+    - /usr/bin/heat-keystone-setup-domain
+
+ -- Gauvain Pocentek <gauvain.pocentek@objectif-libre.com>  Tue, 26 May 2015 11:56:08 +0100
+
+heat (2015.1.0-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release for OpenStack Kilo. (LP: #1449744)
+  * d/p/fix-requirements.patch: Refreshed
+
+ -- Chuck Short <zulcss@ubuntu.com>  Sun, 03 May 2015 13:45:33 -0400
+
+heat (2015.1~rc1-0ubuntu1) vivid; urgency=medium
+
+  * New upstream milestone release for Openstack kilo;
+    - d/control: Align with upstream dependencies. 
+
+ -- Chuck Short <zulcss@ubuntu.com>  Wed, 15 Apr 2015 13:55:31 -0400
+
+heat (2015.1~b3-0ubuntu1) vivid; urgency=medium
+
+  [ Corey Bryant ]
+  * New upstream milestone release for OpenStack kilo:
+    - d/control: Align with upstream dependencies.
+    - d/p/sudoers_patch.patch: Rebased.
+    - d/p/fix-requirements.patch: Rebased.
+
+  [ James Page ]
+  * d/p/fixup-assert-regex.patch: Tweak test to use assertRegexpMatches.
+
+ -- James Page <james.page@ubuntu.com>  Mon, 30 Mar 2015 11:11:18 +0100
+
+heat (2015.1~b2-0ubuntu3) vivid; urgency=medium
+
+  * d/pydist-overrides: Add overrides for oslo packages.
+  * d/control: Add missing BD on python-testresources.
+  * d/*: wrap-and-sort.
+
+ -- James Page <james.page@ubuntu.com>  Thu, 19 Mar 2015 14:27:38 +0000
+
+heat (2015.1~b2-0ubuntu2) vivid; urgency=medium
+
+  * d/rules: Call debhelper with --with systemd to ensure that systemd
+    units are enabled by default.
+
+ -- James Page <james.page@ubuntu.com>  Fri, 06 Mar 2015 15:20:29 +0000
+
+heat (2015.1~b2-0ubuntu1) vivid; urgency=medium
+
+  [ James Page ]
+  * d/heat-common.postinst: Update to use getent for detection of existing
+    heat user and group (LP: #1328315).
+
+  [ Corey Bryant ]
+  * New upstream release.
+    - d/control: Align with upstream dependencies.
+    - d/p/oslo-i18n-private-classes.patch: Dropped. Fixed upstream.
+    - d/p/remove-gettextutils-import.patch: Dropped. Fixed upstream.
+
+  [ Chuck Short ]
+  * debian/rules: Use oslo-config-generator to generate configuration files.
+  * debian/patches/default-log-dir.patch: Dropped no longer needed.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Fri, 13 Feb 2015 09:37:14 -0500
+
+heat (2015.1~b1-0ubuntu4) vivid; urgency=medium
+
+  * Rebuild to pick up pkgos upstart generation fix.
+    - d/control: Bump openstack-pkg-tools to ensure upstart fix inclusion.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Wed, 14 Jan 2015 16:23:46 +0000
+
+heat (2015.1~b1-0ubuntu3) vivid; urgency=medium
+
+  [ Corey Bryant ]
+  * d/p/oslo-i18n-private-classes.patch: Cherry picked from master.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Mon, 12 Jan 2015 12:47:35 -0500
+
+heat (2015.1~b1-0ubuntu2) vivid; urgency=medium
+
+  [ Corey Bryant ]
+  * Systemd enablement:
+    - d/control: Add dh-systemd and openstack-pkg-tools to BD's.
+    - d/rules: Enable use of pkgos, tidyup generated init files.
+    - d/*.init.in: Cherry pick pkgos template configurations from
+      Debian heat package (thanks Thomas).
+    - d/*.upstart.*.init: Drop in preference to generated files.
+  * d/control,compat: Bump debhelper compat level to 9.
+  * d/*.logrotate,heat-common.logrotate: Move to single logrotate
+    configuration.
+
+  [ James Page ]
+  * d/heat-engine.postinst: Drop as effectively a no-op due to commenting.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Thu, 08 Jan 2015 15:37:58 -0500
+
+heat (2015.1~b1-0ubuntu1) vivid; urgency=medium
+
+  [ Chuck Short ]
+  * Open up for vivid.
+  * debian/control: Update bzr branch. 
+  * debian/control: Add python-saharaclient,
+    python-osprofiler, python-oslo.middleware, python-oslo.serialization.
+  * debian/patches/fix-reqirements.patch: Refreshed.
+  * debian/patches/skip-tests.patch: Updated to skip more tests.
+  * debian/rules: Skip integration tests.
+
+  [ Corey Bryant ]
+  * New upstream release.
+    - d/control: Align requirements with upstream.
+    - d/watch: Update uversionmangle for kilo beta naming.
+    - d/rules: Generate heat.conf.sample and apply patch before copy.
+    - d/rules: Run base tests instead of integration tests.
+    - d/p/fix-requirements.patch: Refreshed.
+    - d/p/remove-gettextutils-import.patch: Cherry picked from master.
+  * d/control: Bumped Standards-Version to 3.9.6.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Tue, 06 Jan 2015 08:55:22 -0500
+
+heat (2014.2-0ubuntu1) utopic; urgency=medium
+
+  * New upstream release.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Thu, 16 Oct 2014 14:51:49 -0400
+
+heat (2014.2~rc3-0ubuntu1) utopic; urgency=medium
+
+  * New upstream release candidate.
+
+ -- James Page <james.page@ubuntu.com>  Mon, 13 Oct 2014 20:48:24 +0100
+
+heat (2014.2~rc2-0ubuntu1) utopic; urgency=medium
+
+  * New upstream release candidate:
+    - d/p/*: Refreshed.
+  * d/watch: Only match versions starting with numbers.
+
+ -- James Page <james.page@ubuntu.com>  Thu, 09 Oct 2014 16:38:47 +0100
+
+heat (2014.2~rc1-0ubuntu1) utopic; urgency=medium
+
+  [ Corey Bryant ]
+  * New upstream release candidate:
+    - d/watch: Use tarballs.openstack.org for upstream releases.
+    - d/control: Align requirements with rc1.
+    - d/rules: Re-enable tests during build.
+    - d/p/fix-requirements.patch: Align requirements with Ubuntu.
+
+  [ James Page ]
+  * d/rules,control: Tweak test execution to increase verbosity using
+    subunit.
+
+ -- James Page <james.page@ubuntu.com>  Mon, 06 Oct 2014 09:42:58 +0100
+
+heat (2014.2~b3-0ubuntu1) utopic; urgency=medium
+
+  * New upstream version. 
+
+ -- Chuck Short <zulcss@ubuntu.com>  Mon, 08 Sep 2014 09:40:59 -0400
+
+heat (2014.2~b2-0ubuntu2) utopic; urgency=medium
+
+  * debian/rules: Disable doc build. 
+
+ -- Chuck Short <zulcss@ubuntu.com>  Wed, 06 Aug 2014 11:25:27 -0400
+
+heat (2014.2~b2-0ubuntu1) utopic; urgency=medium
+
+  [ Chuck Short ]
+  * debian/control: Add python-oslo.messaging 
+  * debian/tests/heat-daemons: Dropped heat-enginge.
+  * debian/patches/fix-requirements.patch: Refreshed.
+  * debian/control: Add python-stevedore
+  * debian/control: Add python-posix-ipc.
+  * debian/patches/fix-requirements.patch: Remove routes 2.0 blockage.
+  * debian/patches/default-sqlite.patch: Refreshed.
+  * debian/patches/skip-tests.patch: Refreshed.
+  * debian/control: Add python-requests
+  * debian/rules: Temporarily disable testsuite.
+
+  [ Gauvain Pocentek ]
+  * debian/patches/default-log-dir.patch: define a default log directory to
+    actually get logging to work (LP: #1320013).
+
+ -- Chuck Short <zulcss@ubuntu.com>  Fri, 25 Jul 2014 10:08:14 -0400
+
+heat (2014.2~b1-0ubuntu4) utopic; urgency=medium
+
+  * debian/tests/heat-daemons: Dont test heat-engine 
+
+ -- Chuck Short <zulcss@ubuntu.com>  Mon, 30 Jun 2014 10:33:36 -0400
+
+heat (2014.2~b1-0ubuntu3) utopic; urgency=medium
+
+  * debian/heat-enginge.conf: Dont configure database. 
+
+ -- Chuck Short <zulcss@ubuntu.com>  Mon, 30 Jun 2014 08:55:13 -0400
+
+heat (2014.2~b1-0ubuntu2) utopic; urgency=medium
+
+  * debian/patches/default-sqlite.patch: Dropped. 
+
+ -- Chuck Short <zulcss@ubuntu.com>  Tue, 17 Jun 2014 08:47:49 -0400
+
+heat (2014.2~b1-0ubuntu1) utopic; urgency=medium
+
+  * New upstream release.
+  * debian/control: Open up juno release
+  * debian/patches/default-sqlite.patch: Refreshed.
+  * debian/patches/fix-requirements.patch: Refreshed.
+  * debian/control: Add python-oslotest as a build-dependency.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Thu, 12 Jun 2014 11:57:45 -0400
+
+heat (2014.1-0ubuntu1) trusty; urgency=medium
+
+  [ Chuck Short ]
+  * New upstream release. (LP: #1299055)
+  * debian/heat-common.postinst: Create directory before changing
+    permissions. (LP: #1267557) 
+
+  [ Corey Bryant ]
+  * New upstream release (LP: #1299055).
+
+ -- Chuck Short <zulcss@ubuntu.com>  Thu, 17 Apr 2014 07:27:41 -0400
+
+heat (2014.1~rc2-0ubuntu3) trusty; urgency=medium
+
+  * debian/heat-common.postinst: Fix failing autopkg test. 
+
+ -- Chuck Short <zulcss@ubuntu.com>  Mon, 14 Apr 2014 13:36:05 -0400
+
+heat (2014.1~rc2-0ubuntu2) trusty; urgency=medium
+
+  * Fix up packaging based on Ubuntu Security Team review (LP: #1267557):
+    - debian/control: Drop python-sendfile since it is no longer
+      needed.
+    - debian/heat-common.install: Correct permissions of /etc/heat.
+    - debian/patches/sudoers_patch.patch: Change the directory location
+      for the sudoers so that it users the standard /etc/sudoers.d
+      directory.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Fri, 11 Apr 2014 15:25:44 -0400
+
+heat (2014.1~rc2-0ubuntu1) trusty; urgency=medium
+
+  * New upstream release candidate (LP: #1299055).
+  * debian/patches/fix-requirements.patch: Don't install
+    python-qpid since we use python-kombu by default (LP: #1296912).
+
+ -- Chuck Short <zulcss@ubuntu.com>  Thu, 10 Apr 2014 08:51:46 -0400
+
+heat (2014.1~rc1-0ubuntu1) trusty; urgency=medium
+
+  * New upstream release (LP: #1299055)
+  * debian/patches/use-oslo.sphinx-namespace.patch: Dropped no longer
+    needed.
+  * debian/control: Rename python-oslo.sphinx to python-oslosphinx.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Mon, 31 Mar 2014 21:36:06 -0400
+
+heat (2014.1~b3-0ubuntu1) trusty; urgency=medium
+
+  [ Chuck Short ]
+  * New upstream release.
+  * debian/patches/adjust-dependencies.patch: Dropped no longer needed.
+  * debian/control: Add python-troveclient.
+  * debian/rules: fail to build if testsuite fails.
+  * debian/patches/use-oslo.sphinx-namespace.patch: Use oslo.sphinx namespace.
+
+  [ Adam Gandelman ]
+  * debian/heat-engine.install: Install /etc/heat/environment.d/*.
+    (LP: #1285875).
+
+ -- Chuck Short <zulcss@ubuntu.com>  Thu, 06 Mar 2014 17:18:51 -0500
+
+heat (2014.1~b2-0ubuntu1) trusty; urgency=low
+
+  [ James Page ]
+  * d/p/*: Refreshed.
+
+  [ Yolanda Robla ]
+  * debian/control: Added lockfile to build depends
+
+  [ Chuck Short ]
+  * debian/patches/adjust-dependencies: Adjust Ubuntu dependencies.
+  * debian/patches/skip-tests.patch: Skip failing tests on buildds.
+  * debian/rules: Add pythonpath for tests.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Thu, 23 Jan 2014 15:28:54 -0500
+
+heat (2014.1~b1-0ubuntu2) trusty; urgency=low
+
+  * debian/patches/default-sqlite.patch: Update default sqlite path to
+    fix heat-engine install failures. 
+
+ -- James Page <james.page@ubuntu.com>  Fri, 06 Dec 2013 11:26:25 +0000
+
+heat (2014.1~b1-0ubuntu1) trusty; urgency=low
+
+  [ Chuck Short ]
+  * New upstream release.
+  * debian/control:
+    + Open icehouse release.
+    + Dropped python-argparse, python-qpid, python-noseexcover,
+      python-nose, and python-pycryptopp
+    + Add versioned depends for python-pbr.
+    + Add python-testscenarios as a build dependency.
+  * debian/patches/default-sqlite.patch: Dropped no longer needed.
+
+  [ Yolanda Robla ]
+  * debian/control: Added python-heatclient as a build dependency.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Thu, 05 Dec 2013 21:17:37 -0500
+
+heat (2013.2-0ubuntu1) saucy; urgency=low
+
+  * New upstream release (LP: #1236462).
+
+ -- Chuck Short <zulcss@ubuntu.com>  Thu, 17 Oct 2013 09:30:24 -0400
+
+heat (2013.2~rc2-0ubuntu1) saucy; urgency=low
+
+  * New upstream release candidate (LP: #1239156).
+
+ -- James Page <james.page@ubuntu.com>  Sat, 12 Oct 2013 16:53:03 +0100
+
+heat (2013.2~rc1-0ubuntu1) saucy; urgency=low
+
+  * New upstream release.
+  * debian/control: Dropped python-d2to1 build dependency.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Thu, 03 Oct 2013 09:43:04 -0400
+
+heat (2013.2~b3-0ubuntu1) saucy; urgency=low
+
+  [ Chuck Short ]
+  * New upstream release.
+  * debian/control: Add python-netaddr as build-dep.
+  * debian/heat-common.install: Remove heat-boto and associated man-page
+  * debian/heat-common.install: Remove heat-cfn and associated man-page
+  * debian/heat-common.install: Remove heat-watch and associated man-page
+  * debian/patches/fix-sqlalchemy-0.8.patch: Dropped
+
+  [ Adam Gandelman ]
+  * debian/patches/default-kombu.patch: Dropped.
+  * debian/patches/default-sqlite.patch: Refreshed.
+  * debian/*.install, rules: Install heat.conf.sample as common
+    config file in heat-common. Drop other per-package configs, they
+    are no longer used.
+  * debian/rules: Clean pbr .egg from build dir if it exists.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Mon, 09 Sep 2013 13:10:26 -0400
+
+heat (2013.2~b2.a186.g2b4b248-0ubuntu2) saucy; urgency=low
+
+  * d/rules: Limit test execution concurrency to 1 to avoid test failures
+    in buildds. 
+
+ -- James Page <james.page@ubuntu.com>  Thu, 08 Aug 2013 15:42:32 +0100
+
+heat (2013.2~b2.a186.g2b4b248-0ubuntu1) saucy; urgency=low
+
+  [ Chuck Short ]
+  * debian/patches/rename-quantumclient.patch: Dropped no longer needed. 
+  * debian/control: Add python-oslo.sphinx
+
+  [ James Page ]
+  * New upstream snapshot.
+  * d/watch: Updated to track releases on launchpad.
+  * d/control: Drop BD in pep8, no longer required.
+  * d/control,rules: Drop use of openstack-pkg-tools, revert use of xz
+    compression for debs.
+  * d/control,*.config,*.templates,po: Drop use of debconf/dbconfig-common
+    to configure heat.
+  * d/*.upstart: Add upstart configurations for Ubuntu.
+  * d/p/default-kombu.patch: Switch default messaging from qpid to
+    kombu.
+  * d/p/default-sqlite.patch: Use sqlite as default database option.
+  * d/control: Add python-ceilometerclient to BD's.
+  * d/rules: Fail package build for unit test failures.
+  * d/*.install: Directly install configuration files to /etc/heat.
+  * d/control: Update VCS locations to ubuntu-server-dev branches.
+  * d/heat-common.{install,manpages}: Include new binaries and associated
+    manpages.
+
+ -- James Page <james.page@ubuntu.com>  Thu, 08 Aug 2013 15:23:59 +0100
+
+heat (2013.2~b2-0ubuntu4) saucy; urgency=low
+
+  [ Chuck Short ]
+  * debian/rules: Enable testsuite during builds.
+  * debian/patches/fix-sqlalchemy-0.8.patch: Build against sqlalchemy 0.8.
+  * debian/patches/rename-quantumclient.patch: quantumclient -> neutronclient.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Thu, 08 Aug 2013 01:08:42 +0000
+
+heat (2013.2~b2-0ubuntu3) saucy; urgency=low
+
+  * Resynchronize with debian, remaining changes:
+    - Add sqlite3 to heat-common depends to fix
+      an autopkgtest failure.
+    - Add autopkg tests. 
+    - Pass the testsuite if it fails.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Wed, 07 Aug 2013 10:36:33 -0400
+
+heat (2013.2~b2-0ubuntu2) saucy; urgency=low
+
+  * debian/control: Add sqlite3 to heat-common depends to fix
+    an autopkgtest failure. 
+
+ -- Chuck Short <zulcss@ubuntu.com>  Tue, 06 Aug 2013 15:36:33 +0000
+
+heat (2013.2~b2-0ubuntu1) saucy; urgency=low
+
+  [ Yolanda Robla ]
+  * debian/tests: added autopkg tests
+
+  [ Chuck Short ]
+  * New upstream release
+  * debian/control:
+    - Add python-pbr to build-depends.
+    - Add python-d2to to build-depends.
+    - Dropped python-argparse.
+    - Add python-six to build-depends.
+    - Dropped python-sendfile.
+    - Dropped python-nose.
+    - Added testrepository.
+    - Added python-testtools.
+  * debian/rules: Run testrepository instead of nosetets.
+  * debian/patches/removes-lxml-version-limitation-from-pip-requires.patch: Dropped
+    no longer needed.
+  * debian/patches/fix-package-version-detection-when-building-doc.patch: Dropped
+    no longer needed.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Mon, 22 Jul 2013 16:22:29 -0400
+
+heat (2013.1-4) unstable; urgency=low
+
+  * Fixed the dbsync to the new thing upstream is using (it was crashing the
+    postinst).
+  * Fixed the prerm script of heat-engine that was calling dbc_go heat instead
+    of dbc_go heat-engine.
+  * Added missing dependency: python-mysqldb.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 22 May 2013 23:57:49 +0800
+
+heat (2013.1-3) unstable; urgency=low
+
+  * Added missing dbconfig-common depends (Closes: #709126). Thanks to Andrea
+    Beckmann for the bug report.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 21 May 2013 12:38:11 +0800
+
+heat (2013.1-2) unstable; urgency=low
+
+  * Uploading to unstable.
+  * Removes the <=2.3.5 from python-lxml requirements.
+  * Fix package version detection when building docs.
+  * Cleans doc/build on the clean target.
+
+ -- Thomas Goirand <zigo@debian.org>  Thu, 16 May 2013 13:15:54 +0000
+
+heat (2013.1-1) experimental; urgency=low
+
+  * Initial release (Closes: #695302).
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 04 Feb 2013 21:56:59 +0800

@@ -1,0 +1,8 @@
+/usr/bin/heat-db-setup
+/usr/bin/heat-keystone-setup
+/usr/bin/heat-keystone-setup-domain
+/usr/bin/heat-manage
+etc/heat/api-paste.ini
+etc/heat/heat.conf etc/heat
+etc/heat/policy.json
+etc/heat/templates
