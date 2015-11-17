@@ -2,3 +2,4 @@
 sudoers_patch.patch
 #default-log-dir.patch
 fixup-assert-regex.patch
+pbr-version-disable.patch

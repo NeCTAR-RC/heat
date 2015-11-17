@@ -1,0 +1,68 @@
+diff --git a/heat/cmd/api.py b/heat/cmd/api.py
+index e79fe95..7bf6198 100755
+--- a/heat/cmd/api.py
++++ b/heat/cmd/api.py
+@@ -43,8 +43,7 @@ LOG = logging.getLogger('heat.api')
+ def main():
+     try:
+         logging.register_options(cfg.CONF)
+-        cfg.CONF(project='heat', prog='heat-api',
+-                 version=version.version_info.version_string())
++        cfg.CONF(project='heat', prog='heat-api')
+         logging.setup(cfg.CONF, 'heat-api')
+         messaging.setup()
+ 
+diff --git a/heat/cmd/api_cfn.py b/heat/cmd/api_cfn.py
+index ec78df8..17ae208 100755
+--- a/heat/cmd/api_cfn.py
++++ b/heat/cmd/api_cfn.py
+@@ -46,8 +46,7 @@ def main():
+     try:
+         logging.register_options(cfg.CONF)
+         cfg.CONF(project='heat',
+-                 prog='heat-api-cfn',
+-                 version=version.version_info.version_string())
++                 prog='heat-api-cfn')
+         logging.setup(cfg.CONF, 'heat-api-cfn')
+         logging.set_defaults()
+         messaging.setup()
+diff --git a/heat/cmd/api_cloudwatch.py b/heat/cmd/api_cloudwatch.py
+index a9d54b0..b12cf6f 100755
+--- a/heat/cmd/api_cloudwatch.py
++++ b/heat/cmd/api_cloudwatch.py
+@@ -46,8 +46,7 @@ def main():
+     try:
+         logging.register_options(cfg.CONF)
+         cfg.CONF(project='heat',
+-                 prog='heat-api-cloudwatch',
+-                 version=version.version_info.version_string())
++                 prog='heat-api-cloudwatch')
+         logging.setup(cfg.CONF, 'heat-api-cloudwatch')
+         logging.set_defaults()
+         messaging.setup()
+diff --git a/heat/cmd/engine.py b/heat/cmd/engine.py
+index 1574a5a..05c4daf 100755
+--- a/heat/cmd/engine.py
++++ b/heat/cmd/engine.py
+@@ -44,8 +44,7 @@ LOG = logging.getLogger('heat.engine')
+ 
+ def main():
+     logging.register_options(cfg.CONF)
+-    cfg.CONF(project='heat', prog='heat-engine',
+-             version=version.version_info.version_string())
++    cfg.CONF(project='heat', prog='heat-engine')
+     logging.setup(cfg.CONF, 'heat-engine')
+     logging.set_defaults()
+     messaging.setup()
+diff --git a/heat/cmd/manage.py b/heat/cmd/manage.py
+index 64a14ad..03796b1 100644
+--- a/heat/cmd/manage.py
++++ b/heat/cmd/manage.py
+@@ -156,7 +156,6 @@ def main():
+     try:
+         default_config_files = cfg.find_config_files('heat', 'heat-engine')
+         CONF(sys.argv[1:], project='heat', prog='heat-manage',
+-             version=version.version_info.version_string(),
+              default_config_files=default_config_files)
+     except RuntimeError as e:
+         sys.exit("ERROR: %s" % e)
