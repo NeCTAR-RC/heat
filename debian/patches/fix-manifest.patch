@@ -1,0 +1,40 @@
+diff --git a/MANIFEST.in b/MANIFEST.in
+new file mode 100644
+index 0000000..75fc82d
+--- /dev/null
++++ b/MANIFEST.in
+@@ -0,0 +1,34 @@
++include heat/db/sqlalchemy/migrate_repo/README
++include heat/db/sqlalchemy/migrate_repo/migrate.cfg
++include heat/tests/testing-overview.txt
++include heat/tests/templates/Neutron.template
++include heat/tests/templates/WordPress_Single_Instance.yaml
++include heat/tests/templates/README
++include heat/tests/templates/WordPress_Single_Instance.template
++include heat/tests/templates/Neutron.yaml
++include heat/tests/policy/notallowed.json
++include heat/tests/policy/resources.json
++include heat/tests/policy/deny_stack_user.json
++include heat/tests/policy/check_admin.json
++include heat/locale/heat-log-error.pot
++include heat/locale/zh_CN/LC_MESSAGES/heat-log-critical.po
++include heat/locale/pt/LC_MESSAGES/heat-log-critical.po
++include heat/locale/tr_TR/LC_MESSAGES/heat-log-critical.po
++include heat/locale/it/LC_MESSAGES/heat-log-critical.po
++include heat/locale/heat.pot
++include heat/locale/pt_BR/LC_MESSAGES/heat-log-critical.po
++include heat/locale/ko_KR/LC_MESSAGES/heat-log-critical.po
++include heat/locale/heat-log-critical.pot
++include heat/locale/heat-log-info.pot
++include heat/locale/es/LC_MESSAGES/heat-log-critical.po
++include heat/locale/heat-log-warning.pot
++include heat/locale/cs/LC_MESSAGES/heat-log-critical.po
++include heat/locale/zh_TW/LC_MESSAGES/heat-log-critical.po
++include heat/locale/fr/LC_MESSAGES/heat-log-error.po
++include heat/locale/fr/LC_MESSAGES/heat-log-critical.po
++include heat/locale/ja/LC_MESSAGES/heat-log-critical.po
++include heat/locale/de/LC_MESSAGES/heat-log-critical.po
++include heat/locale/de/LC_MESSAGES/heat.po
++include heat/cloudinit/config
++include heat/cloudinit/boothook.sh
++include heat/openstack/common/README
