@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2869344_9ad89c91",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000224
+      },
+      "writtenOn": "2021-08-19T01:36:04Z",
+      "side": 1,
+      "message": "\u003e Patch Set 1: Verified-1\n\u003e \n\u003e Build Failed \n\u003e \n\u003e https://jenkins.rc.nectar.org.au/job/heat-focal-victoria-tox-py36/2/ : FAILURE\n\u003e \n\u003e https://jenkins.rc.nectar.org.au/job/heat-focal-victoria-tox-py38/2/ : SUCCESS\n\u003e \n\u003e https://jenkins.rc.nectar.org.au/job/heat-container-focal-victoria/3/ : SUCCESS (skipped)\n\nrecheck",
+      "revId": "0babcdbf09c9394de1d5d050857be41370a62136",
+      "serverId": "f182a8af-62ca-4ceb-ab81-14f8fec9c6c5"
+    }
+  ]
+}
